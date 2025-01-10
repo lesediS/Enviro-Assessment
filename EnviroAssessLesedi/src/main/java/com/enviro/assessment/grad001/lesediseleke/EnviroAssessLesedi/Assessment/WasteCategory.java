@@ -24,4 +24,8 @@ public class WasteCategory {
     //Waste disposal guidelines
     @Size(max = 1500, message = "Guidelines cannot be more than 1500 characters.")
     private String disposalGuideline;
+
+    //Tips on recycling
+    @Size(max = 1500, message = "Tips cannot be longer than 1500 characters.")
+    private String tips;
 }
