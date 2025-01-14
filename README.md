@@ -38,3 +38,60 @@ cd <repository_directory>
 - JDBC URL: `jdbc:h2:mem:testdb`
 - Username: `sa`
 - Password: `password`
+
+#### Base URL: `http://localhost:8080/api/categories`
+
+### Sample Request and Response
+
+#### Create a New Category
+**Request:**
+```http
+POST /api/categories
+Content-Type: application/json
+
+{
+  "name": "Plastic",
+  "description": "Non-biodegradable material",
+  "disposalGuideline": "Place in blue recycling bin.",
+  "tips": "Clean and sort before recycling."
+}
+```
+
+**Response:**
+```json
+{
+  "id": 1,
+  "name": "Plastic",
+  "description": "Non-biodegradable material",
+  "disposalGuideline": "Place in blue recycling bin.",
+  "tip": "Clean and sort before recycling."
+}
+```
+
+### Error Handling
+Validation errors return structured JSON responses. For example:
+
+**Request:**
+```http
+POST /api/categories HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "",
+  "description": "Description exceeding the maximum allowed length..."
+}
+```
+
+**Response:**
+```json
+{
+  "name": "Category name is required.",
+  "description": "Description must not exceed 500 characters."
+}
+```
+
+## Technologies Used
+- Spring Boot
+- Spring Data JPA
+- Hibernate Validator
+- H2 Database
