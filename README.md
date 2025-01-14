@@ -53,7 +53,7 @@ Content-Type: application/json
   "name": "Plastic",
   "description": "Non-biodegradable material",
   "disposalGuideline": "Place in blue recycling bin.",
-  "tips": "Clean and sort before recycling."
+  "tip": "Clean and sort before recycling."
 }
 ```
 
